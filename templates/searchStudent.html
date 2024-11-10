@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Search Student</h2>
+    
+    <form method="POST" action="/search_students" class="mt-3">
+        <div class="form-group">
+            <label for="reg_no">Registration Number:</label>
+            <input type="text" name="reg_no" class="form-control" id="reg_no">
+        </div>
+        <div class="form-group mt-2">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" class="form-control" id="first_name">
+        </div>
+        <div class="form-group mt-2">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" class="form-control" id="last_name">
+        </div>
+        <div class="form-group mt-2">
+            <label for="branch">Branch:</label>
+            <input type="text" name="branch" class="form-control" id="branch">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Search</button>
+    </form>
+    
+    {% if students %}
+        <h3 class="mt-5">Search Results</h3>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Registration Number</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in students %}
+                    <tr>
+                        <td>{{ student[0] }}</td>
+                        <td>{{ student[1] }}</td>
+                        <td>{{ student[2] }}</td>
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p class="mt-4">No students found matching the search criteria.</p>
+    {% endif %}
+</div>
+{% endblock %}

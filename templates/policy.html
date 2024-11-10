@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Placement Policy {% endblock %} - FlaskApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-center bg-primary text-white">
+                <h2>Placement Policy</h2>
+            </div>
+            <div class="card-body p-4">
+                <h5>Eligibility Criteria</h5>
+                <p>
+                    Students must maintain a minimum CGPA of 7.0 and have no active backlogs to participate in the placement process. 
+                    Any exceptions will be considered on a case-by-case basis and may require approval from the placement cell.
+                </p>
+
+                <h5>Application Process</h5>
+                <p>
+                    Eligible students can apply to open positions through the placement portal. Each student can apply to a maximum of three 
+                    positions at a time to ensure fair opportunity for all applicants.
+                </p>
+
+                <h5>Selection and Offers</h5>
+                <p>
+                    Once a student receives an offer, they will be removed from other ongoing processes unless it is a dream or super-dream offer. 
+                    This policy is designed to prevent holding multiple offers and allow other candidates to participate.
+                </p>
+
+                <h5>Code of Conduct</h5>
+                <p>
+                    Students are expected to uphold integrity throughout the placement process. Any form of misrepresentation, 
+                    including fake documents or incorrect information, will lead to disqualification from current and future placement activities.
+                </p>
+
+                <h5>Responsibilities</h5>
+                <p>
+                    Students are required to attend all pre-placement talks and company presentations as scheduled. Attendance is compulsory 
+                    as it helps students make informed decisions about the roles they are applying for.
+                </p>
+
+                <h5>Guidelines</h5>
+                <p>
+                    Placements are a privilege extended to students by the institution. Students are expected to adhere to all guidelines and 
+                    timelines as outlined by the placement cell, including deadlines for application submissions, resume updates, and interview schedules.
+                </p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

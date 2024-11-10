@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Department Admin Home {% endblock %} - FlaskApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .container1 {
+            margin-top: 10rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+
+        /* Adjusted card size */
+        .card {
+            position: relative;
+            max-width: 350px; /* Increased width */
+            height: 250px; /* Increased height */
+            background: #fff;
+            margin: 30px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .container1 .card:hover {
+            height: 450px; /* Adjusted height on hover */
+            transform: scale(1.1);
+        }
+
+        .container1 .card .imgBx {
+            position: relative;
+            width: 180px; /* Adjusted width */
+            height: 180px; /* Adjusted height */
+            top: -30px;
+            margin: 0 auto;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .container1 .card .imgBx img {
+            max-width: 100%;
+            max-height: 100%;
+            transform: scale(1.1); /* Reduced icon scale */
+        }
+
+        .container1 .card .content {
+            position: relative;
+            margin-top: -100px; /* Adjusted for better alignment */
+            padding: 10px 15px;
+            text-align: center;
+            color: #111;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+
+        .container1 .card:hover .content {
+            visibility: visible;
+            opacity: 1;
+            margin-top: -40px;
+            transition-delay: 0.3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <!-- Ongoing Recruitment List Card -->
+        <div class="card">
+            <div class="imgBx" style="margin-top: 1ch;">
+                <img src="https://img.icons8.com/fluency/344/data-configuration.png" class="img-fluid"/>
+            </div>
+            <div class="content" style="margin-top: 1ch;">
+                <h5 class="card-title">Ongoing Recruitments</h5>
+                <p class="card-text">View the ongoing company recruitment lists and details.</p>
+                <a href="/db" class="btn btn-primary">View Recruitments</a>
+            </div>
+        </div>
+
+        <!-- Search Students Card -->
+        <div class="card">
+            <div class="imgBx" style="margin-top: 1ch;">
+                <img src="https://img.icons8.com/color-glass/344/search.png" class="img-fluid"/>
+            </div>
+            <div class="content" style="margin-top: 1ch;">
+                <h5 class="card-title">Search Students</h5>
+                <p class="card-text">Search and filter students by course, branch, section, or USN.</p>
+                <a href="/search_students" class="btn btn-primary">Search Students</a>
+            </div>
+        </div>
+
+        <!-- Statistics Card -->
+        <div class="card">
+            <div class="imgBx" style="margin-top: 1ch;">
+                <img src="https://img.icons8.com/external-itim2101-flat-itim2101/344/external-statistics-network-technology-itim2101-flat-itim2101.png" class="img-fluid"/>
+            </div>
+            <div class="content" style="margin-top: 1ch;">
+                <h5 class="card-title">View Statistics</h5>
+                <p class="card-text">View statistics by branches and graphical representation of placements.</p>
+                <a href="/viewstat" class="btn btn-primary">View Statistics</a>
+            </div>
+        </div>
+
+        <!-- Policy Card -->
+        <div class="card">
+            <div class="imgBx" style="margin-top: 1ch;">
+                <img src="https://img.icons8.com/?size=100&id=EUM1sHPZXmLO&format=png&color=000000" class="img-fluid"/>
+            </div>
+            <div class="content" style="margin-top: 1ch;">
+                <h5 class="card-title">Policy</h5>
+                <p class="card-text">View the placement policy.</p>
+                <a href="/policy" class="btn btn-primary">View Policy</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
